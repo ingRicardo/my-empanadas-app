@@ -1,1 +1,27 @@
 <p>menu works!</p>
+<ul class="empanada-list">
+      @for (item of items(); track item.id) {
+        <li class="empanada-card">
+          <div class="header">
+            <strong>{{ item.title }}</strong>
+            @if (item.subtitle) {
+              <small>{{ item.subtitle }}</small>
+            }
+          </div>
+
+          <div class="gallery" [attr.aria-label]="item.title + ' photo gallery'">
+            @for (img of item.gallery; track img.src) {
+              <img
+                [src]="img.src"
+                [alt]="img.alt"
+                width="120"
+                height="90"
+                loading="lazy"
+              />
+            } @empty {
+              <span class="no-photos">No photos for this item.</span>
+            }
+          </div>
+        </li>
+      }
+    </ul>
