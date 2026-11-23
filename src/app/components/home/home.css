@@ -1,0 +1,12 @@
+.center-title {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.center-image {
+  display: block;
+  margin-inline: auto;
+  max-width: 100%;
+  height: auto;
+}
